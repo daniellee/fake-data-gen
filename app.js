@@ -172,7 +172,7 @@ function import_data() {
 					metric[key] = value;
 					client.write(metric, currentDate, function(err) {
 					  if (err) {
-					    console.log('error' + err);
+					    console.log('error for key ' + key + ': ' + err);
 					  }
 					});
 					currentDate.setSeconds(currentDate.getSeconds() - secondsPerPoint);

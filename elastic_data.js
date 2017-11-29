@@ -67,6 +67,7 @@ function liveFeedToLogstash() {
     _.each(tags, function(value, key) {
       message['@' + key] = value;
     });
+    console.log(message);
 
     client.post('/metrics-' + moment().format('YYYY.MM.DD') + '/metric', message, function(err) {
       if (err) {
